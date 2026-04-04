@@ -545,13 +545,27 @@ a:hover {
   font-weight: 600;
 }
 
+.hours-card--evening .hours-card-evening-hours {
+  margin-bottom: 0;
+}
+
+.hours-card--evening .hours-card-evening-parenthetical {
+  font-size: 0.95em;
+  opacity: 0.92;
+}
+
+.hours-card--evening .hours-card-evening-closed {
+  margin-top: 0.3rem;
+}
+
 /* Erweiterung — photo aligned with .container */
 .section-expansion {
   background: var(--color-white);
+  padding-bottom: 2rem;
 }
 
 .section-expansion .container.narrow {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .section-expansion .container.narrow p {
@@ -560,8 +574,8 @@ a:hover {
 }
 
 .section-expansion .container.narrow + .container + .container.narrow {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 /* Match .hero-bg width: break out of section horizontal padding only */
@@ -914,11 +928,34 @@ a:hover {
 /* Map */
 .section-map {
   background: var(--color-foam);
+  padding-bottom: 2rem;
 }
 
 .map-contact {
   font-size: 1.05rem;
   margin: 0 0 1.5rem;
+}
+
+/* Kontakt (above footer) */
+.section-kontakt {
+  background: var(--color-white);
+}
+
+.section-kontakt .kontakt-phone {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.section-kontakt .kontakt-phone a {
+  color: var(--color-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.section-kontakt .kontakt-phone a:hover {
+  color: var(--color-accent-dark);
 }
 
 .map-contact a {
@@ -943,21 +980,20 @@ a:hover {
 .site-footer {
   background: var(--color-deep);
   color: rgba(255, 255, 255, 0.85);
-  padding: 2.5rem 1.25rem 3rem;
+  padding: 1.35rem 1.25rem 1.5rem;
 }
 
 .copyright {
   display: block;
   margin: 0;
-  padding: 2rem 1.25rem 0;
+  padding: 1rem 1.25rem 0;
   font-size: 0.9rem;
   opacity: 0.75;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .legal-notes {
-  padding-top: 2rem;
+  padding-top: 1rem;
   max-width: 720px;
 }
 
