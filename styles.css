@@ -407,8 +407,8 @@ a:hover {
   padding-inline-start: 0.35em;
 }
 
-/* Outdated hours: hazard-style X along true diagonals (corner to corner).
-   Real DOM + inset:0 overlay so cqh resolves (pseudo-elements often get cqh=0 → both arms at 0°). */
+/* Outdated hours: hazard X is SVG whose viewBox is set in px to match the overlay (see inline script).
+   That keeps scaling uniform so dash boundaries stay ⊥ to the path (no diamond/shear from anisotropic stretch). */
 .hours-card--outdated {
   position: relative;
   overflow: hidden;
@@ -422,35 +422,12 @@ a:hover {
   pointer-events: none;
   overflow: hidden;
   border-radius: inherit;
-  container-type: size;
 }
 
-.hours-card-outdated-arm {
-  --tape-h: clamp(22px, 5.5vw, 36px);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: hypot(100cqw, 100cqh);
-  max-width: none;
-  height: var(--tape-h);
-  transform-origin: center center;
-  /* Stripe run length = band thickness so each red/white section is square */
-  background: repeating-linear-gradient(
-    90deg,
-    #c8102e 0,
-    #c8102e var(--tape-h),
-    #ffffff var(--tape-h),
-    #ffffff calc(var(--tape-h) * 2)
-  );
-  opacity: 0.6;
-  box-shadow:
-    inset 0 0 0 1px rgba(0, 0, 0, 0.07),
-    0 1px 2px rgba(0, 0, 0, 0.06);
-  transform: translate(-50%, -50%) rotate(atan2(100cqh, 100cqw));
-}
-
-.hours-card-outdated-arm--b {
-  transform: translate(-50%, -50%) rotate(atan2(-100cqh, 100cqw));
+.hours-card-outdated-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hours-card--outdated > p {
@@ -585,6 +562,13 @@ a:hover {
 .section-expansion .container.narrow + .container + .container.narrow {
   margin-top: 2.5rem;
   margin-bottom: 2rem;
+}
+
+/* Match .hero-bg width: break out of section horizontal padding only */
+.section-expansion .container.expansion-full-bleed {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  width: min(100vw, calc(100% + 2.5rem));
 }
 
 .expansion-figure {
@@ -989,6 +973,31 @@ a:hover {
   font-size: 0.85rem;
   line-height: 1.6;
   opacity: 0.7;
+}
+
+#impressum .impressum-lines {
+  display: grid;
+  grid-template-columns: max-content auto 1fr;
+  column-gap: 0.35em;
+  row-gap: 0.3rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  opacity: 0.7;
+}
+
+#impressum .impressum-key {
+  font-weight: 600;
+  text-align: end;
+}
+
+#impressum .impressum-sep {
+  text-align: center;
+  font-weight: 400;
+}
+
+#impressum .impressum-val {
+  text-align: start;
+  min-width: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

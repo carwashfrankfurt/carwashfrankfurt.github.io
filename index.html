@@ -51,8 +51,20 @@
         <h2>Unsere Öffnungszeiten</h2>
         <div class="hours-card hours-card--outdated">
           <div class="hours-card-outdated-overlay" aria-hidden="true">
-            <span class="hours-card-outdated-arm"></span>
-            <span class="hours-card-outdated-arm hours-card-outdated-arm--b"></span>
+            <!-- SVG diagonals: viewBox is synced to overlay px size (script) so scaling is uniform — dashes stay
+                 rectangular (perpendicular to the path). A square viewBox + preserveAspectRatio=none caused shear. -->
+            <svg class="hours-card-outdated-svg" viewBox="0 0 1 1" focusable="false">
+              <g class="hours-card-outdated-tapes" fill="none" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.65">
+                <g class="hours-card-outdated-diag hours-card-outdated-diag--nwse">
+                  <line class="hours-card-outdated-line hours-card-outdated-line--w" x1="0" y1="1" x2="1" y2="0" stroke="#ffffff" />
+                  <line class="hours-card-outdated-line hours-card-outdated-line--r" x1="0" y1="1" x2="1" y2="0" stroke="#c8102e" />
+                </g>
+                <g class="hours-card-outdated-diag hours-card-outdated-diag--nesw">
+                  <line class="hours-card-outdated-line hours-card-outdated-line--w" x1="0" y1="0" x2="1" y2="1" stroke="#ffffff" />
+                  <line class="hours-card-outdated-line hours-card-outdated-line--r" x1="0" y1="0" x2="1" y2="1" stroke="#c8102e" />
+                </g>
+              </g>
+            </svg>
           </div>
           <p><strong>Montag bis Samstag</strong> von 6:00 bis 23:00 Uhr</p>
           <p><strong>Sonn- und Feiertage</strong> geschlossen</p>
@@ -84,7 +96,7 @@
         <h2 id="expansion-heading">Unsere Erweiterung ist nun fertig!</h2>
         <p>Es stehen Ihnen 4 neue Waschplätze zur Verfügung</p>
       </div>
-      <div class="container">
+      <div class="container expansion-full-bleed">
         <figure class="expansion-figure">
           <img
             src="new_boxes.jpg"
@@ -98,7 +110,7 @@
       <div class="container narrow">
         <p>Und 10 neue Staubsaugerplätze</p>
       </div>
-      <div class="container">
+      <div class="container expansion-full-bleed">
         <figure class="expansion-figure">
           <img
             src="staubsaugerplätze.jpg"
@@ -228,14 +240,99 @@
 
   <footer class="site-footer">
     <div class="legal-notes container" id="impressum">
-      <h3 class="legal-heading">Impressum (Kurz)</h3>
-      <p>Angaben gemäß Vorbild der Website — bitte durch Ihre rechtsgültigen Firmendaten ersetzen.</p>
-    </div>
-    <div class="legal-notes container" id="datenschutz">
-      <h3 class="legal-heading">Datenschutz (Hinweis)</h3>
-      <p>Für eine vollständige Datenschutzerklärung konsultieren Sie bitte einen Rechtsberater. Diese statische Demo-Seite setzt keine Tracking-Cookies.</p>
+      <h3 class="legal-heading">Impressum</h3>
+      <div class="impressum-lines">
+        <span class="impressum-key">Besitzer</span><span class="impressum-sep">:</span><span class="impressum-val">Klaus Heidenreich</span>
+        <span class="impressum-key">Owner</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
+        <span class="impressum-key">Chef</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
+        <span class="impressum-key">Vending</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
+        <span class="impressum-key">Organisation</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
+        <span class="impressum-key">Technik</span><span class="impressum-sep">:</span><span class="impressum-val">Dominik</span>
+      </div>
     </div>
     <p class="copyright container">CarWash Frankfurt 1822</p>
   </footer>
+  <script>
+    (function () {
+      function tapeThickness(w, h) {
+        var m = Math.min(w, h);
+        var base = Math.max(6, Math.min(16, m * 0.042));
+        return base * 3;
+      }
+
+      function syncOutdatedHazardSvg(svg) {
+        var overlay = svg.parentElement;
+        if (!overlay || !overlay.classList.contains("hours-card-outdated-overlay")) return;
+        var r = overlay.getBoundingClientRect();
+        var w = r.width;
+        var h = r.height;
+        if (w < 2 || h < 2) return;
+
+        var t = tapeThickness(w, h);
+        var da = t + " " + t;
+
+        svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+        svg.setAttribute("preserveAspectRatio", "none");
+
+        var lines = svg.querySelectorAll(".hours-card-outdated-line");
+        lines.forEach(function (line) {
+          var isRed = line.classList.contains("hours-card-outdated-line--r");
+          line.setAttribute("stroke-width", String(t));
+          line.setAttribute("stroke-dasharray", da);
+          if (isRed) {
+            line.setAttribute("stroke-dashoffset", String(t));
+          } else {
+            line.removeAttribute("stroke-dashoffset");
+          }
+        });
+
+        var nwse = svg.querySelector(".hours-card-outdated-diag--nwse");
+        var nesw = svg.querySelector(".hours-card-outdated-diag--nesw");
+        if (nwse) {
+          nwse.querySelectorAll("line").forEach(function (line) {
+            line.setAttribute("x1", "0");
+            line.setAttribute("y1", String(h));
+            line.setAttribute("x2", String(w));
+            line.setAttribute("y2", "0");
+          });
+        }
+        if (nesw) {
+          nesw.querySelectorAll("line").forEach(function (line) {
+            line.setAttribute("x1", "0");
+            line.setAttribute("y1", "0");
+            line.setAttribute("x2", String(w));
+            line.setAttribute("y2", String(h));
+          });
+        }
+
+        svg.setAttribute("data-hazard-synced", "");
+      }
+
+      function init() {
+        var svgs = document.querySelectorAll(".hours-card-outdated-svg");
+        function syncAll() {
+          svgs.forEach(function (svg) {
+            syncOutdatedHazardSvg(svg);
+          });
+        }
+        syncAll();
+        requestAnimationFrame(syncAll);
+        svgs.forEach(function (svg) {
+          var overlay = svg.parentElement;
+          if (overlay && typeof ResizeObserver !== "undefined") {
+            new ResizeObserver(function () {
+              syncOutdatedHazardSvg(svg);
+            }).observe(overlay);
+          }
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 </body>
 </html>
