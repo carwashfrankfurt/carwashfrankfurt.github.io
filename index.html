@@ -2,25 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Car Wash Frankfurt — Autopflege in Nord-Frankfurt. SB-Waschboxen, Staubsauger, Hurricane, Mattenreiniger.">
   <title>Car Wash Frankfurt — Autopflege Nord-Frankfurt</title>
-  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="logo" href="#home"><span class="logo-carwash">CarWash</span><span class="logo-frankfurt">Frankfurt</span></a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </label>
-      <nav class="main-nav" aria-label="Hauptnavigation">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="masthead">
+    <div class="masthead__bar">
+      <a class="brand" href="#top" aria-label="Car Wash Frankfurt Start">
+        <span class="brand__a">CarWash</span><span class="brand__b"> Frankfurt</span>
+      </a>
+      <button
+        type="button"
+        class="masthead__menu-btn"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Menü öffnen">
+        <span class="masthead__menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="masthead__nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
-          <li><a href="#portal">Wasch-Programme</a></li>
+          <li><a href="#waschprogramme">Wasch-Programme</a></li>
           <li><a href="#anfahrt">Anfahrt</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
@@ -28,389 +38,325 @@
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <p class="hero-eyebrow">Die Top Autopflege in Nord-Frankfurt</p>
-        <h1>Wir sind <strong>Car Wash Frankfurt</strong></h1>
-        <p class="hero-lead">Wir bieten Ihnen</p>
-        <ul class="hero-stats">
-          <li><span class="stat-num">9</span> Waschboxen</li>
-          <li><span class="stat-num">13</span> Staubsauger</li>
-          <li><span class="stat-num">7</span> Hurricanes</li>
-          <li><span class="stat-num">2</span> Fußmattenreiniger</li>
-          <li><span class="stat-num">1</span> Verkaufsautomat</li>
+  <main id="main">
+    <section class="showcase" id="top" aria-labelledby="showcase-title">
+      <div class="showcase__glow" aria-hidden="true"></div>
+      <div class="showcase__grid" aria-hidden="true"></div>
+      <div class="showcase__inner">
+        <p class="showcase__kicker">Die Top Autopflege in Nord-Frankfurt</p>
+        <h1 id="showcase-title" class="showcase__title">Wir sind <em>Car Wash Frankfurt</em></h1>
+        <p class="showcase__lead">Wir bieten Ihnen</p>
+        <ul class="stat-board">
+          <li><span class="stat-board__num">9</span><span class="stat-board__lbl">Waschboxen</span></li>
+          <li><span class="stat-board__num">13</span><span class="stat-board__lbl">Staubsauger</span></li>
+          <li><span class="stat-board__num">7</span><span class="stat-board__lbl">Hurricanes</span></li>
+          <li><span class="stat-board__num">2</span><span class="stat-board__lbl">Fußmattenreiniger</span></li>
+          <li><span class="stat-board__num">1</span><span class="stat-board__lbl">Verkaufsautomat</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section section-hours" id="oeffnungszeiten">
-      <div class="container narrow">
-        <h2>Unsere Öffnungszeiten</h2>
-        <div class="hours-card hours-card--outdated">
-          <div class="hours-card-outdated-overlay" aria-hidden="true">
-            <!-- SVG diagonals: viewBox is synced to overlay px size (script) so scaling is uniform — dashes stay
-                 rectangular (perpendicular to the path). A square viewBox + preserveAspectRatio=none caused shear. -->
-            <svg class="hours-card-outdated-svg" viewBox="0 0 1 1" focusable="false">
-              <g class="hours-card-outdated-tapes" fill="none" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.65">
-                <g class="hours-card-outdated-diag hours-card-outdated-diag--nwse">
-                  <line class="hours-card-outdated-line hours-card-outdated-line--w" x1="0" y1="1" x2="1" y2="0" stroke="#ffffff" />
-                  <line class="hours-card-outdated-line hours-card-outdated-line--r" x1="0" y1="1" x2="1" y2="0" stroke="#c8102e" />
-                </g>
-                <g class="hours-card-outdated-diag hours-card-outdated-diag--nesw">
-                  <line class="hours-card-outdated-line hours-card-outdated-line--w" x1="0" y1="0" x2="1" y2="1" stroke="#ffffff" />
-                  <line class="hours-card-outdated-line hours-card-outdated-line--r" x1="0" y1="0" x2="1" y2="1" stroke="#c8102e" />
-                </g>
-              </g>
-            </svg>
+    <section class="panel panel--light" id="oeffnungszeiten">
+      <div class="panel__wrap">
+        <header class="section-head">
+          <h2 class="section-head__title">Unsere Öffnungszeiten</h2>
+        </header>
+
+        <article class="time-card time-card--muted" aria-labelledby="hours-standard">
+          <div class="time-card__hazard" aria-hidden="true">
+            <span class="time-card__hazard-line time-card__hazard-line--a"></span>
+            <span class="time-card__hazard-line time-card__hazard-line--b"></span>
           </div>
-          <p><strong>Montag bis Samstag</strong> von 6:00 bis 23:00 Uhr</p>
-          <p><strong>Sonn- und Feiertags</strong> geschlossen</p>
-        </div>
-        <div class="hours-card hours-card--evening">
-          <h3 class="hours-card-heading">Nur während der hellen Monate:<br><span class="hours-card-heading-accent">Late Night Car Wash</span></h3>
-          <p class="hours-card-evening-hours">
+          <div class="time-card__body">
+            <h3 id="hours-standard" class="visually-hidden">Reguläre Zeiten</h3>
+            <p><strong>Montag bis Samstag</strong> von 6:00 bis 23:00 Uhr</p>
+            <p><strong>Sonn- und Feiertags</strong> geschlossen</p>
+          </div>
+        </article>
+
+        <article class="time-card time-card--accent">
+          <h3 class="time-card__title">Nur während der hellen Monate:<br><span class="time-card__accent">Late Night Car Wash</span></h3>
+          <p class="time-card__block">
             <strong>Montag bis Samstag</strong> von 06:00 bis 02:00 morgens<br>
-            <span class="hours-card-evening-parenthetical">(exklusive Sonntag)</span>
+            <span class="time-card__note">(exklusive Sonntag)</span>
           </p>
-          <p class="hours-card-evening-closed"><strong>Sonn- und Feiertags</strong> geschlossen</p>
-        </div>
-        <div class="hours-card hours-card--amenities">
-          <p class="hours-line">
-            <strong class="hours-line__label">Staubsauger</strong><span class="hours-line__sep">:</span><span class="hours-line__value">Immer offen</span>
-          </p>
-          <p class="hours-line">
-            <strong class="hours-line__label">Hurricane</strong><span class="hours-line__sep">:</span><span class="hours-line__value">Immer offen</span>
-          </p>
-          <p class="hours-line">
-            <strong class="hours-line__label">Verkaufsautomat</strong><span class="hours-line__sep">:</span><span class="hours-line__value">Immer offen</span>
-          </p>
-          <p class="hours-line">
-            <strong class="hours-line__label">Mattenreiniger</strong><span class="hours-line__sep">:</span><span class="hours-line__value">Immer offen</span>
-          </p>
+          <p><strong>Sonn- und Feiertags</strong> geschlossen</p>
+        </article>
+
+        <div class="amenity-strip">
+          <p><strong>Staubsauger</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Hurricane</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Verkaufsautomat</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Mattenreiniger</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
         </div>
       </div>
     </section>
 
-    <section class="section section-expansion" id="erweiterung" aria-labelledby="expansion-heading">
-      <div class="container narrow">
-        <h2 id="expansion-heading">Unsere Erweiterung ist nun fertig!</h2>
-        <p>Es stehen Ihnen 4 neue Waschplätze zur Verfügung</p>
+    <section class="panel" id="erweiterung" aria-labelledby="exp-title">
+      <div class="panel__wrap panel__wrap--narrow">
+        <header class="section-head">
+          <h2 id="exp-title" class="section-head__title">Unsere Erweiterung ist nun fertig!</h2>
+        </header>
+        <p class="panel__text">Es stehen Ihnen 4 neue Waschplätze zur Verfügung</p>
       </div>
-      <div class="container expansion-full-bleed">
-        <figure class="expansion-figure">
-          <img
-            src="new_boxes.jpg"
-            alt="Neue Waschboxen bei Car Wash Frankfurt: vier SB-Waschplätze unter blau-weißer Markise"
-            width="3906"
-            height="1536"
-            loading="lazy"
-            decoding="async">
-        </figure>
+      <figure class="photo-rail">
+        <img
+          src="src/new_boxes.jpg"
+          alt="Neue Waschboxen bei Car Wash Frankfurt: vier SB-Waschplätze unter blau-weißer Markise"
+          width="3906"
+          height="1536"
+          loading="lazy"
+          decoding="async">
+      </figure>
+      <div class="panel__wrap panel__wrap--narrow">
+        <p class="panel__text">Und 10 neue Staubsaugerplätze</p>
       </div>
-      <div class="container narrow">
-        <p>Und 10 neue Staubsaugerplätze</p>
-      </div>
-      <div class="container expansion-full-bleed">
-        <figure class="expansion-figure">
-          <img
-            src="staubsaugerplätze.jpg"
-            alt="Neue Staubsaugerplätze unter Überdachung: nummerierte Saugstationen mit roten und blauen Schläuchen"
-            width="4000"
-            height="1293"
-            loading="lazy"
-            decoding="async">
-        </figure>
-      </div>
+      <figure class="photo-rail">
+        <img
+          src="src/staubsaugerplaetze.jpg"
+          alt="Neue Staubsaugerplätze unter Überdachung: nummerierte Saugstationen mit roten und blauen Schläuchen"
+          width="4000"
+          height="1293"
+          loading="lazy"
+          decoding="async">
+      </figure>
     </section>
 
-    <section class="section section-bonus">
-      <div class="container">
-        <h2>Bonus-System</h2>
+    <section class="panel panel--bonus">
+      <div class="panel__wrap panel__wrap--narrow">
+        <header class="section-head section-head--invert">
+          <h2 class="section-head__title">Bonus-System</h2>
+        </header>
         <p>Nutzen Sie den Wertmarken-Automaten.<br>Ab einem Einkauf von 50 Wertmarken erhalten Sie 5 Münzen gratis dazu.</p>
-        <p class="pdf-note">(Überall nutzbar, bis auf den Verkaufsautomaten)</p>
+        <p class="panel__fine">(Überall nutzbar, bis auf den Verkaufsautomaten)</p>
       </div>
     </section>
 
-    <section class="section section-tagline">
-      <div class="container">
-        <p class="tagline-big">Nicht nur <strong>Sauber</strong>,<br>Sondern <strong>Rein</strong></p>
+    <section class="panel panel--tagline" aria-hidden="false">
+      <div class="panel__wrap">
+        <p class="tagline">Nicht nur <strong>Sauber</strong>,<br>Sondern <strong>Rein</strong></p>
       </div>
     </section>
 
-    <section class="section section-text section-portal" id="portal">
-      <div class="container">
-        <div class="portal-program-grid">
-          <article class="program-card program-card--red">
-            <span class="program-card__num">1</span>
-            <h3 class="program-card__title">XXL Schaum</h3>
-            <p class="program-card__desc">Mit starken Reinigern beginnen</p>
-          </article>
-          <article class="program-card program-card--blue">
-            <span class="program-card__num">2</span>
-            <h3 class="program-card__title">Hochdruck-Wäsche</h3>
-            <p class="program-card__desc">Den groben Dreck lösen</p>
-          </article>
-          <article class="program-card program-card--green">
-            <span class="program-card__num">3</span>
-            <h3 class="program-card__title">Schaumbürste</h3>
-            <p class="program-card__desc">Selber Hand anlegen</p>
-          </article>
-          <article class="program-card program-card--blue">
-            <span class="program-card__num">4</span>
-            <h3 class="program-card__title">Klar-Spülen</h3>
-            <p class="program-card__desc">Entfernen des Waschmittels</p>
-          </article>
-          <article class="program-card program-card--blue">
-            <span class="program-card__num">5</span>
-            <h3 class="program-card__title">Heiß-Wachs</h3>
-            <p class="program-card__desc">Mikro-Beschichtung für Ihren Lack</p>
-          </article>
-          <article class="program-card program-card--blue">
-            <span class="program-card__num">6</span>
-            <h3 class="program-card__title">Glanz-Spülen</h3>
-            <p class="program-card__desc">Mit destilliertem Wasser zu maximalem Glanz</p>
-          </article>
-        </div>
-        <aside class="portal-program-note" aria-label="Hinweis zum Waschablauf">
+    <section class="panel panel--light" id="waschprogramme">
+      <div class="panel__wrap">
+        <header class="section-head">
+          <h2 class="section-head__title">Wasch-Programme</h2>
+        </header>
+        <ol class="program-track">
+          <li class="program-track__item program-track__item--red">
+            <span class="program-track__idx">1</span>
+            <div>
+              <h3 class="program-track__name">XXL Schaum</h3>
+              <p class="program-track__desc">Mit starken Reinigern beginnen</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">2</span>
+            <div>
+              <h3 class="program-track__name">Hochdruck-Wäsche</h3>
+              <p class="program-track__desc">Den groben Dreck lösen</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--green">
+            <span class="program-track__idx">3</span>
+            <div>
+              <h3 class="program-track__name">Schaumbürste</h3>
+              <p class="program-track__desc">Selber Hand anlegen</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">4</span>
+            <div>
+              <h3 class="program-track__name">Klar-Spülen</h3>
+              <p class="program-track__desc">Entfernen des Waschmittels</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">5</span>
+            <div>
+              <h3 class="program-track__name">Heiß-Wachs</h3>
+              <p class="program-track__desc">Mikro-Beschichtung für Ihren Lack</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">6</span>
+            <div>
+              <h3 class="program-track__name">Glanz-Spülen</h3>
+              <p class="program-track__desc">Mit destilliertem Wasser zu maximalem Glanz</p>
+            </div>
+          </li>
+        </ol>
+        <aside class="program-note">
           <p>Das Wichtigste: Vorgang immer mit Glanz-Spülen beenden</p>
         </aside>
       </div>
     </section>
 
-    <section class="section section-features">
-      <div class="container">
-        <div class="feature-grid">
-          <article class="feature-card" id="staubsauger">
-            <h3>Staubsauger</h3>
-            <p>Die zentrale Staubsauger-Anlage saugt mit XX&nbsp;kW</p>
-            <div class="feature-card__media-slot">
-              <div class="feature-card__media-wrap">
-                <img
-                  class="feature-card__media"
-                  src="staubsaugeranlage.jpg"
-                  alt="Zentrale Staubsauger-Anlage: Separator, Gebläse und Rohrleitungen in der Technikzentrale"
-                  width="4000"
-                  height="3000"
-                  loading="lazy"
-                  decoding="async">
-              </div>
+    <section class="panel">
+      <div class="panel__wrap">
+        <div class="feature-deck">
+          <article class="feature-tile" id="staubsauger">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Staubsauger</h2>
+              <p>Die zentrale Staubsauger-Anlage saugt mit XX&nbsp;kW</p>
+            </div>
+            <div class="feature-tile__media">
+              <img
+                src="src/staubsaugeranlage.jpg"
+                alt="Zentrale Staubsauger-Anlage: Separator, Gebläse und Rohrleitungen in der Technikzentrale"
+                width="4000"
+                height="3000"
+                loading="lazy"
+                decoding="async">
             </div>
           </article>
-          <article class="feature-card" id="hurricane">
-            <h3>Hurricane</h3>
-            <p>Blasen Sie den Dreck weg wo Ihre Finger nicht hinkommen</p>
-            <div class="feature-card__media-slot">
-              <div class="feature-card__media-wrap">
-                <img
-                  class="feature-card__media"
-                  src="hurricane.jpg"
-                  alt="Hurricane-Station mit Druckluft-Schlauch und Pistole an der Waschbox"
-                  width="4000"
-                  height="3000"
-                  loading="lazy"
-                  decoding="async">
-              </div>
+
+          <article class="feature-tile" id="hurricane">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Hurricane</h2>
+              <p>Blasen Sie den Dreck weg wo Ihre Finger nicht hinkommen</p>
+            </div>
+            <div class="feature-tile__media">
+              <img
+                src="src/hurricane.jpg"
+                alt="Hurricane-Station mit Druckluft-Schlauch und Pistole an der Waschbox"
+                width="4000"
+                height="3000"
+                loading="lazy"
+                decoding="async">
             </div>
           </article>
-          <article class="feature-card" id="verkaufsautomat">
-            <h3>Verkaufsautomat</h3>
-            <p>Egal ob Duftbaum, Reinigungsmittel oder Getränke, hier werden Sie bedient</p>
+
+          <article class="feature-tile feature-tile--plain" id="verkaufsautomat">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Verkaufsautomat</h2>
+              <p>Egal ob Duftbaum, Reinigungsmittel oder Getränke, hier werden Sie bedient</p>
+            </div>
+            <div class="feature-tile__media feature-tile__media--empty" aria-hidden="true"></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-map" id="anfahrt">
-      <div class="container">
-        <h2>So finden Sie uns</h2>
-        <p class="map-contact"><strong>Berner Straße 69 · 60437 · Frankfurt am Main</strong></p>
-        <div class="map-wrap">
+    <section class="panel panel--map" id="anfahrt">
+      <div class="panel__wrap">
+        <header class="section-head">
+          <h2 class="section-head__title">So finden Sie uns</h2>
+        </header>
+        <p class="map-addr"><strong>Berner Straße 69 · 60437 · Frankfurt am Main</strong></p>
+        <div class="map-frame">
           <iframe
             title="Karte: Car Wash Frankfurt, Berner Straße 69, Frankfurt am Main"
             src="https://www.google.com/maps?q=50.1940211,8.6597626&amp;z=17&amp;hl=de&amp;output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-          <p class="map-link"><a href="https://www.google.com/maps/place/Car+Wash+Frankfurt/@50.1938692,8.6588005,17.36z/data=!3m1!5s0x47bd0626d1c43029:0xa5250465b5b66e0d!4m6!3m5!1s0x47bd0626cfd36205:0x4557bd3867621175!8m2!3d50.1940211!4d8.6597626!16s%2Fg%2F11bwgvj1_4" target="_blank" rel="noopener noreferrer">Größere Karte in Google Maps öffnen</a></p>
+            allowfullscreen></iframe>
         </div>
+        <p class="map-more">
+          <a href="https://www.google.com/maps/place/Car+Wash+Frankfurt/@50.1938692,8.6588005,17.36z/data=!3m1!5s0x47bd0626d1c43029:0xa5250465b5b66e0d!4m6!3m5!1s0x47bd0626cfd36205:0x4557bd3867621175!8m2!3d50.1940211!4d8.6597626!16s%2Fg%2F11bwgvj1_4" target="_blank" rel="noopener noreferrer">Größere Karte in Google Maps öffnen</a>
+        </p>
       </div>
     </section>
 
-    <section class="section section-kontakt" id="kontakt">
-      <div class="container">
-        <h2>Kontakt</h2>
-        <p class="kontakt-phone">Telefon: <a href="tel:+4915792395379">01579-2395379</a></p>
+    <section class="panel panel--contact" id="kontakt">
+      <div class="panel__wrap panel__wrap--narrow">
+        <header class="section-head">
+          <h2 class="section-head__title">Kontakt</h2>
+        </header>
+        <p class="contact-line">Telefon: <a href="tel:+4915792395379">01579-2395379</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="legal-notes container" id="impressum">
-      <h3 class="legal-heading">Impressum</h3>
-      <div class="impressum-lines">
-        <span class="impressum-key">Besitzer</span><span class="impressum-sep">:</span><span class="impressum-val">Klaus Heidenreich</span>
-        <span class="impressum-key">Owner</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
-        <span class="impressum-key">Chef</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
-        <span class="impressum-key">Vending</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
-        <span class="impressum-key">Organisation</span><span class="impressum-sep">:</span><span class="impressum-val">Anna-Marie Weigand</span>
-        <span class="impressum-key">Technik</span><span class="impressum-sep">:</span><span class="impressum-val">Dominik</span>
-      </div>
+  <footer class="site-foot">
+    <div class="site-foot__inner" id="impressum">
+      <h2 class="site-foot__heading">Impressum</h2>
+      <dl class="impressum">
+        <div><dt>Besitzer</dt><dd>Klaus Heidenreich</dd></div>
+        <div><dt>Owner</dt><dd>Anna-Marie Weigand</dd></div>
+        <div><dt>Chef</dt><dd>Anna-Marie Weigand</dd></div>
+        <div><dt>Vending</dt><dd>Anna-Marie Weigand</dd></div>
+        <div><dt>Organisation</dt><dd>Anna-Marie Weigand</dd></div>
+        <div><dt>Technik</dt><dd>Dominik</dd></div>
+      </dl>
+      <p class="site-foot__copy">CarWash Frankfurt</p>
     </div>
-    <p class="copyright container">CarWash Frankfurt</p>
   </footer>
+
   <script>
-    (function () {
-      function tapeThickness(w, h) {
-        var m = Math.min(w, h);
-        var base = Math.max(6, Math.min(16, m * 0.042));
-        return base * 3;
-      }
+(function () {
+  function layoutHazardLines() {
+    var card = document.querySelector(".time-card--muted");
+    if (!card) return;
+    var w = card.clientWidth;
+    var h = card.clientHeight;
+    if (w <= 0 || h <= 0) return;
+    var len = Math.hypot(w, h);
+    var deg = 180 / Math.PI;
+    var rotA = Math.atan2(h, w) * deg;
+    var rotB = Math.atan2(h, -w) * deg;
+    card.style.setProperty("--hazard-len", len + "px");
+    card.style.setProperty("--hazard-rot-a", rotA + "deg");
+    card.style.setProperty("--hazard-rot-b", rotB + "deg");
+  }
 
-      function syncOutdatedHazardSvg(svg) {
-        var overlay = svg.parentElement;
-        if (!overlay || !overlay.classList.contains("hours-card-outdated-overlay")) return;
-        var r = overlay.getBoundingClientRect();
-        var w = r.width;
-        var h = r.height;
-        if (w < 2 || h < 2) return;
+  function initHazardLines() {
+    var card = document.querySelector(".time-card--muted");
+    layoutHazardLines();
+    if (!card || typeof ResizeObserver === "undefined") return;
+    var ro = new ResizeObserver(function () {
+      layoutHazardLines();
+    });
+    ro.observe(card);
+  }
 
-        var t = tapeThickness(w, h);
-        var stripeLen = t * 1.5;
-        var da = stripeLen + " " + stripeLen;
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHazardLines);
+  } else {
+    initHazardLines();
+  }
 
-        svg.setAttribute("viewBox", "0 0 " + w + " " + h);
-        svg.setAttribute("preserveAspectRatio", "none");
+  var root = document.documentElement;
+  var toggle = document.getElementById("menu-toggle");
+  var panel = document.getElementById("site-nav");
+  var mq = window.matchMedia("(min-width: 48rem)");
 
-        var lines = svg.querySelectorAll(".hours-card-outdated-line");
-        lines.forEach(function (line) {
-          var isRed = line.classList.contains("hours-card-outdated-line--r");
-          var neswFirstRed = line.closest(".hours-card-outdated-diag--nesw");
-          line.setAttribute("stroke-width", String(t));
-          line.setAttribute("stroke-dasharray", da);
-          if (neswFirstRed) {
-            /* NESW (top-left → bottom-right): hazard starts with red along the path */
-            if (isRed) {
-              line.removeAttribute("stroke-dashoffset");
-            } else {
-              line.setAttribute("stroke-dashoffset", String(stripeLen));
-            }
-          } else {
-            if (isRed) {
-              line.setAttribute("stroke-dashoffset", String(stripeLen));
-            } else {
-              line.removeAttribute("stroke-dashoffset");
-            }
-          }
-        });
+  function setOpen(open) {
+    if (!toggle || !panel) return;
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    root.classList.toggle("nav-open", open);
+  }
 
-        var nwse = svg.querySelector(".hours-card-outdated-diag--nwse");
-        var nesw = svg.querySelector(".hours-card-outdated-diag--nesw");
-        if (nwse) {
-          nwse.querySelectorAll("line").forEach(function (line) {
-            line.setAttribute("x1", "0");
-            line.setAttribute("y1", String(h));
-            line.setAttribute("x2", String(w));
-            line.setAttribute("y2", "0");
-          });
-        }
-        if (nesw) {
-          nesw.querySelectorAll("line").forEach(function (line) {
-            line.setAttribute("x1", "0");
-            line.setAttribute("y1", "0");
-            line.setAttribute("x2", String(w));
-            line.setAttribute("y2", String(h));
-          });
-        }
+  function onViewportChange() {
+    if (mq.matches) {
+      setOpen(false);
+    }
+  }
 
-        svg.setAttribute("data-hazard-synced", "");
-      }
+  if (toggle && panel) {
+    if (typeof mq.addEventListener === "function") {
+      mq.addEventListener("change", onViewportChange);
+    } else {
+      mq.addListener(onViewportChange);
+    }
 
-      function init() {
-        var svgs = document.querySelectorAll(".hours-card-outdated-svg");
-        function syncAll() {
-          svgs.forEach(function (svg) {
-            syncOutdatedHazardSvg(svg);
-          });
-        }
-        syncAll();
-        requestAnimationFrame(syncAll);
-        svgs.forEach(function (svg) {
-          var overlay = svg.parentElement;
-          if (overlay && typeof ResizeObserver !== "undefined") {
-            new ResizeObserver(function () {
-              syncOutdatedHazardSvg(svg);
-            }).observe(overlay);
-          }
-        });
-      }
+    toggle.addEventListener("click", function () {
+      var next = toggle.getAttribute("aria-expanded") !== "true";
+      setOpen(next);
+    });
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", init);
-      } else {
-        init();
-      }
-    })();
-  </script>
-  <script>
-    (function () {
-      var navToggle = document.getElementById("nav-toggle");
-      var navLabel = document.querySelector(".nav-toggle-label");
-      var mainNav = document.querySelector(".main-nav");
-      if (!navToggle || !mainNav) return;
-
-      var scrollBeforeToggle = 0;
-      /* Only the hamburger label should trigger scroll lock restore — not programmatic uncheck */
-      var menuToggledByLabel = false;
-
-      if (navLabel) {
-        navLabel.addEventListener(
-          "click",
-          function () {
-            scrollBeforeToggle = window.scrollY || window.pageYOffset;
-            menuToggledByLabel = true;
-          },
-          true
-        );
-      }
-
-      navToggle.addEventListener("change", function () {
-        if (!menuToggledByLabel) {
-          return;
-        }
-        menuToggledByLabel = false;
-        var y = scrollBeforeToggle;
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            window.scrollTo(0, y);
-          });
-        });
+    panel.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        setOpen(false);
       });
+    });
 
-      mainNav.querySelectorAll('a[href^="#"]').forEach(function (link) {
-        link.addEventListener("click", function (e) {
-          var href = link.getAttribute("href");
-          if (!href || href.length < 2) return;
-          var id = decodeURIComponent(href.slice(1));
-          var target = document.getElementById(id);
-          if (!target) return;
-
-          e.preventDefault();
-          navToggle.checked = false;
-
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              target.scrollIntoView({ behavior: "smooth", block: "start" });
-              if (window.history && window.history.replaceState) {
-                window.history.replaceState(null, "", href);
-              }
-            });
-          });
-        });
-      });
-    })();
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
+})();
   </script>
 </body>
 </html>
