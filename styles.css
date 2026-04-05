@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -101,8 +102,18 @@ a:hover {
 }
 
 /* Mobile nav toggle (checkbox hack) */
+/* Off-viewport so toggling/focus never scrolls the page into the control */
 .nav-toggle {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
   opacity: 0;
   pointer-events: none;
 }

@@ -19,11 +19,10 @@
       </label>
       <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#portal">Portal-Waschanlage</a></li>
-          <li><a href="#hurricane">Hurricane</a></li>
-          <li><a href="#staubsauger">SB-Staubsauger</a></li>
-          <li><a href="#verkaufsautomat">Verkaufsautomat</a></li>
+          <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
+          <li><a href="#portal">Wasch-Programme</a></li>
+          <li><a href="#anfahrt">Anfahrt</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
     </div>
@@ -353,6 +352,64 @@
       } else {
         init();
       }
+    })();
+  </script>
+  <script>
+    (function () {
+      var navToggle = document.getElementById("nav-toggle");
+      var navLabel = document.querySelector(".nav-toggle-label");
+      var mainNav = document.querySelector(".main-nav");
+      if (!navToggle || !mainNav) return;
+
+      var scrollBeforeToggle = 0;
+      /* Only the hamburger label should trigger scroll lock restore — not programmatic uncheck */
+      var menuToggledByLabel = false;
+
+      if (navLabel) {
+        navLabel.addEventListener(
+          "click",
+          function () {
+            scrollBeforeToggle = window.scrollY || window.pageYOffset;
+            menuToggledByLabel = true;
+          },
+          true
+        );
+      }
+
+      navToggle.addEventListener("change", function () {
+        if (!menuToggledByLabel) {
+          return;
+        }
+        menuToggledByLabel = false;
+        var y = scrollBeforeToggle;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            window.scrollTo(0, y);
+          });
+        });
+      });
+
+      mainNav.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          var href = link.getAttribute("href");
+          if (!href || href.length < 2) return;
+          var id = decodeURIComponent(href.slice(1));
+          var target = document.getElementById(id);
+          if (!target) return;
+
+          e.preventDefault();
+          navToggle.checked = false;
+
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+              if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, "", href);
+              }
+            });
+          });
+        });
+      });
     })();
   </script>
 </body>
