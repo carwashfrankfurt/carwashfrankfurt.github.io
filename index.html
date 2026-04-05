@@ -389,6 +389,23 @@
         });
       });
 
+      function getAnchorOffsetPx() {
+        var probe = document.createElement("div");
+        probe.style.cssText =
+          "position:absolute;left:0;top:0;width:0;height:0;overflow:hidden;visibility:hidden;pointer-events:none;padding-top:var(--anchor-offset)";
+        document.documentElement.appendChild(probe);
+        var px = parseFloat(getComputedStyle(probe).paddingTop) || 0;
+        document.documentElement.removeChild(probe);
+        return px;
+      }
+
+      function scrollToAnchor(target) {
+        var offset = getAnchorOffsetPx();
+        var rect = target.getBoundingClientRect();
+        var top = window.scrollY + rect.top - offset;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      }
+
       mainNav.querySelectorAll('a[href^="#"]').forEach(function (link) {
         link.addEventListener("click", function (e) {
           var href = link.getAttribute("href");
@@ -402,7 +419,7 @@
 
           requestAnimationFrame(function () {
             requestAnimationFrame(function () {
-              target.scrollIntoView({ behavior: "smooth", block: "start" });
+              scrollToAnchor(target);
               if (window.history && window.history.replaceState) {
                 window.history.replaceState(null, "", href);
               }
