@@ -18,8 +18,6 @@
   --radius: 12px;
   --radius-lg: 20px;
   --header-h: 72px;
-  /* Distance from top of viewport to section start when jumping via nav (header + optional gap) */
-  --anchor-offset: calc(var(--header-h) + 0.75rem);
 }
 
 *,
@@ -30,7 +28,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--anchor-offset);
+  scroll-padding-top: var(--header-h);
 }
 
 body {
