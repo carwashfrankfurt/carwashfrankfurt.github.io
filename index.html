@@ -279,7 +279,8 @@
         if (w < 2 || h < 2) return;
 
         var t = tapeThickness(w, h);
-        var da = t + " " + t;
+        var stripeLen = t * 1.5;
+        var da = stripeLen + " " + stripeLen;
 
         svg.setAttribute("viewBox", "0 0 " + w + " " + h);
         svg.setAttribute("preserveAspectRatio", "none");
@@ -287,12 +288,22 @@
         var lines = svg.querySelectorAll(".hours-card-outdated-line");
         lines.forEach(function (line) {
           var isRed = line.classList.contains("hours-card-outdated-line--r");
+          var neswFirstRed = line.closest(".hours-card-outdated-diag--nesw");
           line.setAttribute("stroke-width", String(t));
           line.setAttribute("stroke-dasharray", da);
-          if (isRed) {
-            line.setAttribute("stroke-dashoffset", String(t));
+          if (neswFirstRed) {
+            /* NESW (top-left → bottom-right): hazard starts with red along the path */
+            if (isRed) {
+              line.removeAttribute("stroke-dashoffset");
+            } else {
+              line.setAttribute("stroke-dashoffset", String(stripeLen));
+            }
           } else {
-            line.removeAttribute("stroke-dashoffset");
+            if (isRed) {
+              line.setAttribute("stroke-dashoffset", String(stripeLen));
+            } else {
+              line.removeAttribute("stroke-dashoffset");
+            }
           }
         });
 
