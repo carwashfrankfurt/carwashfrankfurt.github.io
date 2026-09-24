@@ -10,6 +10,7 @@
   --cyan-deep: #007e99;
   --sky: #7dd3fc;
   --stat: #72c3f1;
+  --badge: #00657a;
   --danger: #c8102e;
   --program-red: #c8102e;
   --program-blue: #1e5aa8;
@@ -685,6 +686,30 @@ html.nav-open .masthead__menu-btn::after {
   color: var(--ink);
 }
 
+/* —— „Neu"-Badge —— */
+.badge-new {
+  display: inline-block;
+  flex: 0 0 auto;
+  align-self: center;
+  vertical-align: middle;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: var(--badge);
+  color: var(--white);
+}
+
+/* Auf dunklem Grund umgekehrt, sonst verschwindet das Pill im Navy */
+.badge-new--invert {
+  background: var(--sky);
+  color: var(--ink);
+}
+
 /* —— Feature tiles —— */
 .feature-deck {
   display: grid;
@@ -693,21 +718,10 @@ html.nav-open .masthead__menu-btn::after {
   align-items: stretch;
 }
 
-@media (min-width: 30rem) and (max-width: 50.9375rem) {
+/* Four tiles: 2×2 — photo tiles on top, text-only tiles below */
+@media (min-width: 30rem) {
   .feature-deck {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.25rem, 2.5vw, 1.75rem);
-  }
-
-  /* Three tiles: avoid a lone empty cell on the second row */
-  .feature-deck .feature-tile:nth-child(3):last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 51rem) {
-  .feature-deck {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(1.25rem, 2.5vw, 1.75rem);
   }
 }
