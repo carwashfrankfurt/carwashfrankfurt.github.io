@@ -354,6 +354,7 @@ html.nav-open .masthead__menu-btn::after {
 }
 
 .stat-board li {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -363,6 +364,39 @@ html.nav-open .masthead__menu-btn::after {
   border: 1px solid color-mix(in srgb, var(--sky) 24%, transparent);
   box-shadow: inset 0 1px 0 color-mix(in srgb, var(--white) 12%, transparent);
   min-width: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Sprungmarke zur passenden Sektion; das ::after macht die ganze Karte klickbar,
+   damit die verlinkten und die unverlinkten Karten gleich aussehen. */
+.stat-board__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.stat-board__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+@media (hover: hover) {
+  .stat-board li:has(.stat-board__link:hover) {
+    transform: translateY(-2px);
+    background: color-mix(in srgb, var(--white) 16%, transparent);
+    border-color: color-mix(in srgb, var(--sky) 45%, transparent);
+  }
+}
+
+/* Fokusring um die ganze Karte statt nur um den Text */
+.stat-board li:has(.stat-board__link:focus-visible) {
+  outline: 3px solid var(--sky);
+  outline-offset: 2px;
+}
+
+.stat-board__link:focus-visible {
+  outline: none;
 }
 
 .stat-board__num {
@@ -718,7 +752,7 @@ html.nav-open .masthead__menu-btn::after {
   align-items: stretch;
 }
 
-/* Four tiles: 2×2 — photo tiles on top, text-only tiles below */
+/* Four tiles: 2×2 — drei Foto-Kacheln, eine reine Text-Kachel (Verkaufsautomat) */
 @media (min-width: 30rem) {
   .feature-deck {
     grid-template-columns: repeat(2, minmax(0, 1fr));
