@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Car Wash Frankfurt — Autopflege in Nord-Frankfurt. SB-Waschboxen, Staubsauger, Hurricane, Airffekt-Trocknung, Mattenreiniger.">
+  <title>Car Wash Frankfurt — Autopflege Nord-Frankfurt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="masthead">
+    <div class="masthead__bar">
+      <a class="brand" href="#top" aria-label="Car Wash Frankfurt Start">
+        <span class="brand__a">CarWash</span><span class="brand__b"> Frankfurt</span>
+      </a>
+      <button
+        type="button"
+        class="masthead__menu-btn"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Menü öffnen">
+        <span class="masthead__menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="masthead__nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
+          <li><a href="#waschprogramme">Wasch-Programme</a></li>
+          <li><a href="#anfahrt">Anfahrt</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="showcase" id="top" aria-labelledby="showcase-title">
+      <div class="showcase__glow" aria-hidden="true"></div>
+      <div class="showcase__grid" aria-hidden="true"></div>
+      <div class="showcase__inner">
+        <p class="showcase__kicker">Die Top Autopflege in Nord-Frankfurt</p>
+        <h1 id="showcase-title" class="showcase__title">Wir sind <em>Car Wash Frankfurt</em></h1>
+        <p class="showcase__lead">Wir bieten Ihnen</p>
+        <ul class="stat-board">
+          <li><span class="stat-board__num">9</span><a class="stat-board__lbl stat-board__link" href="#erweiterung">Waschboxen</a></li>
+          <li><span class="stat-board__num">16</span><a class="stat-board__lbl stat-board__link" href="#staubsauger">Staubsauger</a></li>
+          <li><span class="stat-board__num">9</span><a class="stat-board__lbl stat-board__link" href="#hurricane">Hurricanes</a></li>
+          <li><span class="stat-board__num">3</span><span class="stat-board__lbl">Fußmattenreiniger</span></li>
+          <li><span class="stat-board__num">2</span><a class="stat-board__lbl stat-board__link" href="#verkaufsautomat">Verkaufsautomaten</a></li>
+          <li><span class="stat-board__num">1</span><a class="stat-board__lbl stat-board__link" href="#airffekt">Airffekt</a><span class="badge-new badge-new--invert">Neu</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel panel--light" id="oeffnungszeiten">
+      <div class="panel__wrap">
+        <header class="section-head">
+          <h2 class="section-head__title">Unsere Öffnungszeiten</h2>
+        </header>
+
+        <article class="time-card time-card--muted" aria-labelledby="hours-standard">
+          <div class="time-card__hazard" aria-hidden="true">
+            <span class="time-card__hazard-line time-card__hazard-line--a"></span>
+            <span class="time-card__hazard-line time-card__hazard-line--b"></span>
+          </div>
+          <div class="time-card__body">
+            <h3 id="hours-standard" class="visually-hidden">Reguläre Zeiten</h3>
+            <p><strong>Montag bis Samstag</strong> von 6:00 bis 23:00 Uhr</p>
+            <p><strong>Sonn- und Feiertags</strong> geschlossen</p>
+          </div>
+        </article>
+
+        <article class="time-card time-card--accent">
+          <h3 class="time-card__title">Nur während der hellen Monate:<br><span class="time-card__accent">Late Night Car Wash</span></h3>
+          <p class="time-card__block">
+            <strong>Montag bis Samstag</strong> von 06:00 bis 02:00 morgens<br>
+            <span class="time-card__note">(exklusive Sonntag)</span>
+          </p>
+          <p><strong>Sonn- und Feiertags</strong> geschlossen</p>
+        </article>
+
+        <div class="amenity-strip">
+          <p><strong>Staubsauger</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Hurricane</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Airffekt</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Verkaufsautomat</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+          <p><strong>Mattenreiniger</strong><span class="amenity-strip__sep">:</span><span class="amenity-strip__val">Immer offen</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="erweiterung" aria-labelledby="exp-title">
+      <div class="panel__wrap panel__wrap--narrow">
+        <header class="section-head">
+          <h2 id="exp-title" class="section-head__title">Unsere Erweiterung ist nun fertig!</h2>
+        </header>
+        <p class="panel__text">Es stehen Ihnen 4 neue Waschplätze zur Verfügung</p>
+      </div>
+      <figure class="photo-rail">
+        <img
+          src="src/new_boxes.jpg"
+          alt="Neue Waschboxen bei Car Wash Frankfurt: vier SB-Waschplätze unter blau-weißer Markise"
+          width="3636"
+          height="1321"
+          loading="lazy"
+          decoding="async">
+      </figure>
+      <div class="panel__wrap panel__wrap--narrow">
+        <p class="panel__text">Und 10 neue Staubsaugerplätze</p>
+      </div>
+      <figure class="photo-rail">
+        <img
+          src="src/staubsaugerplaetze.jpg"
+          alt="Neue Staubsaugerplätze unter Überdachung: nummerierte Saugstationen mit roten und blauen Schläuchen"
+          width="4000"
+          height="1293"
+          loading="lazy"
+          decoding="async">
+      </figure>
+    </section>
+
+    <section class="panel panel--bonus">
+      <div class="panel__wrap panel__wrap--narrow">
+        <header class="section-head section-head--invert">
+          <h2 class="section-head__title">Bonus-System</h2>
+        </header>
+        <p>Nutzen Sie den Wertmarken-Automaten.<br>Ab einem Einkauf von 50 Wertmarken erhalten Sie 5 Münzen gratis dazu.</p>
+        <p class="panel__fine">(Überall nutzbar, bis auf den Verkaufsautomaten)</p>
+      </div>
+    </section>
+
+    <section class="panel panel--tagline" aria-hidden="false">
+      <div class="panel__wrap">
+        <p class="tagline">Nicht nur <strong>Sauber</strong>,<br>Sondern <strong>Rein</strong></p>
+      </div>
+    </section>
+
+    <section class="panel panel--light" id="waschprogramme">
+      <div class="panel__wrap">
+        <header class="section-head">
+          <h2 class="section-head__title">Wasch-Programme</h2>
+        </header>
+        <ol class="program-track">
+          <li class="program-track__item program-track__item--red">
+            <span class="program-track__idx">1</span>
+            <div>
+              <h3 class="program-track__name">XXL Schaum</h3>
+              <p class="program-track__desc">Mit starken Reinigern beginnen</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">2</span>
+            <div>
+              <h3 class="program-track__name">Hochdruck-Wäsche</h3>
+              <p class="program-track__desc">Den groben Dreck lösen</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--green">
+            <span class="program-track__idx">3</span>
+            <div>
+              <h3 class="program-track__name">Schaumbürste</h3>
+              <p class="program-track__desc">Selber Hand anlegen</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">4</span>
+            <div>
+              <h3 class="program-track__name">Klar-Spülen</h3>
+              <p class="program-track__desc">Entfernen des Waschmittels</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">5</span>
+            <div>
+              <h3 class="program-track__name">Heiß-Wachs</h3>
+              <p class="program-track__desc">Mikro-Beschichtung für Ihren Lack</p>
+            </div>
+          </li>
+          <li class="program-track__item program-track__item--blue">
+            <span class="program-track__idx">6</span>
+            <div>
+              <h3 class="program-track__name">Glanz-Spülen</h3>
+              <p class="program-track__desc">Mit destilliertem Wasser zu maximalem Glanz</p>
+            </div>
+          </li>
+        </ol>
+        <aside class="program-note">
+          <p>Das Wichtigste: Vorgang immer mit Glanz-Spülen beenden</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__wrap">
+        <div class="feature-deck">
+          <article class="feature-tile" id="staubsauger">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Staubsauger</h2>
+              <p>Die zentrale Staubsauger-Anlage saugt mit 24&nbsp;kW</p>
+            </div>
+            <div class="feature-tile__media">
+              <img
+                src="src/staubsaugeranlage.jpg"
+                alt="Zentrale Staubsauger-Anlage: Separator, Gebläse und Rohrleitungen in der Technikzentrale"
+                width="3000"
+                height="4000"
+                loading="lazy"
+                decoding="async">
+            </div>
+          </article>
+
+          <article class="feature-tile" id="hurricane">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Hurricane</h2>
+              <p>Blasen Sie den Dreck weg wo Ihre Finger nicht hinkommen</p>
+            </div>
+            <div class="feature-tile__media">
+              <img
+                src="src/hurricane.jpg"
+                alt="Hurricane-Station mit Druckluft-Schlauch und Pistole an der Waschbox"
+                width="3000"
+                height="4000"
+                loading="lazy"
+                decoding="async">
+            </div>
+          </article>
+
+          <article class="feature-tile feature-tile--plain" id="verkaufsautomat">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Verkaufsautomat</h2>
+              <p>Egal ob Duftbaum, Reinigungsmittel oder Getränke, hier werden Sie bedient</p>
+            </div>
+            <div class="feature-tile__media feature-tile__media--empty" aria-hidden="true"></div>
+          </article>
+
+          <article class="feature-tile" id="airffekt">
+            <div class="feature-tile__text">
+              <h2 class="feature-tile__title">Airffekt <span class="badge-new">Neu</span></h2>
+              <p>Luft mit 500&nbsp;km/h bläst Ihr Auto trocken — ohne Nachwischen und ohne Kalkflecken</p>
+            </div>
+            <div class="feature-tile__media">
+              <img
+                src="src/airffekt.jpg"
+                alt="Airffekt-Trocknungsanlage: Schwenkarm mit Luftschlauch über dem Waschplatz, daneben die Bedieneinheit"
+                width="3004"
+                height="4000"
+                loading="lazy"
+                decoding="async">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--map" id="anfahrt">
+      <div class="panel__wrap">
+        <header class="section-head">
+          <h2 class="section-head__title">So finden Sie uns</h2>
+        </header>
+        <p class="map-addr"><strong>Berner Straße 69 · 60437 · Frankfurt am Main</strong></p>
+        <div class="map-frame">
+          <iframe
+            title="Karte: Car Wash Frankfurt, Berner Straße 69, Frankfurt am Main"
+            src="https://www.google.com/maps?q=50.1940211,8.6597626&amp;z=17&amp;hl=de&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <p class="map-more">
+          <a href="https://www.google.com/maps/place/Car+Wash+Frankfurt/@50.1938692,8.6588005,17.36z/data=!3m1!5s0x47bd0626d1c43029:0xa5250465b5b66e0d!4m6!3m5!1s0x47bd0626cfd36205:0x4557bd3867621175!8m2!3d50.1940211!4d8.6597626!16s%2Fg%2F11bwgvj1_4" target="_blank" rel="noopener noreferrer">Größere Karte in Google Maps öffnen</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="panel panel--contact" id="kontakt">
+      <div class="panel__wrap panel__wrap--narrow">
+        <header class="section-head">
+          <h2 class="section-head__title">Kontakt</h2>
+        </header>
+        <p class="contact-line">Telefon: <a href="tel:+4915792395379">01579-2395379</a></p>
+        <p class="contact-line">E-Mail: <a href="mailto:frankfurt.carwash@gmail.com">frankfurt.carwash@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="site-foot__inner" id="impressum">
+      <h2 class="site-foot__heading">Impressum</h2>
+      <dl class="impressum">
+        <div><dt>Geschäftsleitung</dt><dd>Klaus Heidenreich</dd></div>
+      </dl>
+      <p class="site-foot__copy">CarWash Frankfurt</p>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  function layoutHazardLines() {
+    var card = document.querySelector(".time-card--muted");
+    if (!card) return;
+    var w = card.clientWidth;
+    var h = card.clientHeight;
+    if (w <= 0 || h <= 0) return;
+    var len = Math.hypot(w, h);
+    var deg = 180 / Math.PI;
+    var rotA = Math.atan2(h, w) * deg;
+    var rotB = Math.atan2(h, -w) * deg;
+    card.style.setProperty("--hazard-len", len + "px");
+    card.style.setProperty("--hazard-rot-a", rotA + "deg");
+    card.style.setProperty("--hazard-rot-b", rotB + "deg");
+  }
+
+  function initHazardLines() {
+    var card = document.querySelector(".time-card--muted");
+    layoutHazardLines();
+    if (!card || typeof ResizeObserver === "undefined") return;
+    var ro = new ResizeObserver(function () {
+      layoutHazardLines();
+    });
+    ro.observe(card);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHazardLines);
+  } else {
+    initHazardLines();
+  }
+
+  var root = document.documentElement;
+  var toggle = document.getElementById("menu-toggle");
+  var panel = document.getElementById("site-nav");
+  var mq = window.matchMedia("(min-width: 48rem)");
+
+  function setOpen(open) {
+    if (!toggle || !panel) return;
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    root.classList.toggle("nav-open", open);
+  }
+
+  function onViewportChange() {
+    if (mq.matches) {
+      setOpen(false);
+    }
+  }
+
+  if (toggle && panel) {
+    if (typeof mq.addEventListener === "function") {
+      mq.addEventListener("change", onViewportChange);
+    } else {
+      mq.addListener(onViewportChange);
+    }
+
+    toggle.addEventListener("click", function () {
+      var next = toggle.getAttribute("aria-expanded") !== "true";
+      setOpen(next);
+    });
+
+    panel.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        setOpen(false);
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
+})();
+  </script>
+</body>
+</html>

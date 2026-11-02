@@ -474,6 +474,8 @@ html.nav-open .masthead__menu-btn::after {
   z-index: 1;
 }
 
+/* Hazard cross-out renders only on a muted card: swap --accent for --muted
+   on a .time-card to strike its hours through. */
 .time-card__hazard {
   position: absolute;
   inset: 0;
@@ -482,6 +484,10 @@ html.nav-open .masthead__menu-btn::after {
   pointer-events: none;
   opacity: 0.72;
   mix-blend-mode: multiply;
+}
+
+.time-card:not(.time-card--muted) .time-card__hazard {
+  display: none;
 }
 
 .time-card__hazard-line {
